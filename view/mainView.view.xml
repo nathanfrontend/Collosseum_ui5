@@ -1,0 +1,90 @@
+<mvc:View
+	controllerName="Nathan.Shaw.controller.mainView"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	displayBlock="true"
+	xmlns:core="sap.ui.core"
+
+	xmlns="sap.m">
+	<App>
+		<pages>
+			<Page title="{i18n>title}">
+				<content>
+
+					
+					<l:Grid defaultSpan="L12 M12 S12">
+						<VBox>
+						<Button
+						text="Add"
+						icon="sap-icon://add-activity"
+						type="Emphasized"
+						press="onAddPress" />
+					</VBox>
+
+						<VBox 		class="SapUiResponsiveMargin">
+						
+							<layoutData> 
+								<l:GridData indent="L1 M1 S1" span="L10 M10 S10" />
+							</layoutData>
+							<!-- fills table using the items from results -->
+							<Table 
+					
+								items="{oDataModel>/results}"
+								>
+							
+								<!-- column headers -->
+								<columns>
+									<Column width="auto">
+										<Text text="Task" />
+									</Column>
+									<Column width="auto">
+										<Text text="Created By" />
+										
+									</Column>
+
+									<Column width="35%">
+										<Text text="Description" />
+										
+									</Column>
+									<Column width="auto">
+
+										<Text text="Due date" />
+										
+									</Column>
+									<Column width="auto">
+
+										
+									</Column>
+								</columns>
+
+								<!-- aggregation template - fills each cell with the direct properties of the model in TestDara -->
+								<ColumnListItem>
+									<cells>
+										<Text text="{oDataModel>Title}" />
+										<Text text="{oDataModel>Createdby}" />
+										<Text text="{oDataModel>Description}" />
+					      				<Text text ="{path : 'oDataModel>Duedate', type : 'sap.ui.model.type.Date', formatOptions : {style: 'long'}}"/>	
+											<HBox>
+											<Button 
+											class="sapUiSmallMarginEnd"
+											icon="sap-icon://edit"  
+											press="onEditPress"/>
+											
+											<Button  
+											icon="sap-icon://delete"  
+											press="onDeletePress" />
+											
+										</HBox>
+		
+											
+									</cells>
+								</ColumnListItem>
+							</Table>
+						</VBox>
+					</l:Grid>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

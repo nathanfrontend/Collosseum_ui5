@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+controllerName="Nathan.Shaw.controller.mainView"
+xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core"
+	xmlns:ui="sap.ui"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    
+
+<!-- here goes the content! -->
+
+<Dialog
+		class="sapUiSmallMargin">
+		<f:SimpleForm 
+	
+        class="editableForm" editable="true" layout="ResponsiveGridLayout" title="Created By" labelSpanXL="3" labelSpanL="2"
+			labelSpanM="2"  adjustLabelSpan="false" emptySpanXL="4" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1"
+			columnsL="1" columnsM="1" singleContainerFullSize="false">
+			<f:content>
+				
+			
+			<Label text="{}"/>
+				<Input placeholder="Created by" value="{localValueModel>/new-created-by}"/>
+				
+				<HBox>
+				<Button width="100%" icon="sap-icon://save" text="Submit"  press="onSubmitPress" />
+				<Button width="100%" icon="sap-icon://cancel"  text="Cancel"  press="onCancelCreatedByPress" />
+			</HBox>
+				
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

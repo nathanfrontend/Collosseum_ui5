@@ -1,0 +1,41 @@
+<core:FragmentDefinition
+controllerName="Nathan.Shaw.controller.mainView"
+xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	displayBlock="true"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+    >
+    
+
+<!-- here goes the content! -->
+
+<Dialog>
+		
+		<f:SimpleForm 
+	
+        class="editableForm" editable="true" layout="ResponsiveGridLayout" title="Please confirm you would like to delete task?" labelSpanXL="3" labelSpanL="2"
+			labelSpanM="2"  adjustLabelSpan="false" emptySpanXL="4" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1"
+			columnsL="1" columnsM="1" singleContainerFullSize="false">
+			<f:content>
+				<HBox>
+				<Button
+			 	icon="sap-icon://save" 
+				text="Confirm" 
+				type="Emphasized" 
+				press="onSubmitDeletePress" 
+				class="sapUiSmallMarginEnd"/>
+
+				<Button 
+			
+				icon="sap-icon://cancel"  
+				text="Cancel"  
+				press="onCancelDeletePress" />
+			</HBox>
+				
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

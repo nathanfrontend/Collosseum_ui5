@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "task": "todo 1",
+      "createdBy": "Nathan"
+    },
+    {
+      "task": "todo 2",
+      "createdBy": "Marc"
+    },
+    {
+      "task": "remember how to do JSON models",
+      "createdBy": "Leon"
+    }
+  ]
+}

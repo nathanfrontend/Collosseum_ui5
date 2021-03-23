@@ -1,0 +1,64 @@
+
+<core:FragmentDefinition
+controllerName="Nathan.Shaw.controller.mainView"
+xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core"
+	xmlns:ui="sap.ui"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    
+
+<!-- here goes the content! -->
+
+<Dialog
+		class="sapUiSmallMargin">
+		<f:SimpleForm 
+	
+        class="editableForm" editable="true" layout="ResponsiveGridLayout" title="Edit Task" labelSpanXL="3" labelSpanL="2"
+			labelSpanM="2"  adjustLabelSpan="false" emptySpanXL="4" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1"
+			columnsL="1" columnsM="1" singleContainerFullSize="false">
+			<f:content >
+				
+			
+				<VBox >
+					<Text text="Task:" />
+					<Input value="{editTodo>/Title/Title}" />
+				
+					<Text text="Created by:" />
+					<Input value="{editTodo>/Title/Createdby}" />
+				
+					<Text text="Description:" />
+					<Input value="{editTodo>/Title/Description}" />
+				
+					<Text text="Due date:" />
+					<DatePicker
+					 value="{editTodo>/Title/Duedate}" />
+				</VBox>
+
+				<HBox>
+				<Button 
+				width="auto" 
+				icon="sap-icon://save" 
+				text="Save"   
+				press="onSaveEditPress" 
+				type="Emphasized"
+				class="sapUiSmallMarginEnd"
+			/>
+
+				<Button 
+				width="auto" 
+				icon="sap-icon://cancel" 
+				text="Cancel"   
+				press="onCancelEditBtnPress" 
+				 />
+
+				
+			</HBox>
+				
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>

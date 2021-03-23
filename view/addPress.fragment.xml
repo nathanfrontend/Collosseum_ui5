@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+controllerName="Nathan.Shaw.controller.mainView"
+xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:core="sap.ui.core"
+	xmlns:ui="sap.ui"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    
+
+<!-- here goes the content! -->
+
+<Dialog
+		class="sapUiSmallMargin">
+		<f:SimpleForm 
+	
+        class="editableForm" editable="true" layout="ResponsiveGridLayout" title="Create Task" labelSpanXL="3" labelSpanL="2"
+			labelSpanM="2"  adjustLabelSpan="false" emptySpanXL="4" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="1"
+			columnsL="1" columnsM="1" singleContainerFullSize="false">
+			<f:content>
+				<VBox>
+					<Input 
+						id="new-task-input"
+						placeholder="Enter a task"
+						width="100%"
+						value="{localValueModel>/new-task-input}" />    <!-- Data that is only used within the app - used for data used from the inputs-->
+                        
+						 <Input 
+						id="new-created-by"
+						placeholder="Created by"
+						width="100%"
+						
+                        value="{localValueModel>/new-created-by}" /> <!-- Data that is only used within the app-->
+
+                        <Input 
+						id="description"
+						placeholder="Description"
+						width="100%"
+                        change="handleChange"
+                        value="{localValueModel>/description}" />
+                       <DatePicker
+						
+						value="{localValueModel>/date}" />
+				</VBox>
+				<HBox >
+                  
+                <Button
+				text="Add"
+				icon="sap-icon://add-activity"
+				type="Emphasized"
+				press="onSaveAddPress"
+				class="sapUiSmallMarginEnd" />
+
+                <Button 
+   
+                icon="sap-icon://cancel"  
+                text="Cancel"
+                
+                press="onCancelAddPress" />
+        	
+			   </HBox>
+				
+			</f:content>
+		</f:SimpleForm>
+	</Dialog>
+</core:FragmentDefinition>
