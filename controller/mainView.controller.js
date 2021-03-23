@@ -36,7 +36,7 @@ sap.ui.define([
 
 		},
 		// If the promise created in dataOperations succeeds when called then fulfil this promise - else the catch is then operated. When it gets a response it will create a new JSON model with the data and asign it to a new model. 
-
+//first commit example
 		setItemsModel: function (sortKey, sortDescending) {
 			dataOperations
 				.returnTodoItems(this, sortKey, sortDescending)
