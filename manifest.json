@@ -51,9 +51,11 @@
 	},
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "Nathan.Shaw.view.mainView",
+			"viewName": "Nathan.Shaw.view.app",
 			"type": "XML"
 		},
+	
+
 		"dependencies": {
 			"minUI5Version": "1.30.0",
 			"libs": {
@@ -96,6 +98,17 @@
 					"uri": "css/style.css"
 				}
 			]
-		}
+		}, 
+		"routes": [{
+			"pattern": "",
+			"name": "main",
+			"target": "main"
+		}, {
+			"pattern": "detail/{taskId}",
+			"name": "taskDetails",
+			"target": "taskDetails"
+		}],
+		
+		
 	}
 }

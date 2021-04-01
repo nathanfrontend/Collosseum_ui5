@@ -1,0 +1,48 @@
+
+<mvc:View
+xmlns:l="sap.ui.layout"
+ 
+xmlns:html="http://www.w3.org/1999/xhtml"
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.m"
+ 
+controllerName="com.testing.nathan.todo.controller.taskDetails"
+displayBlock="true">
+
+<Page
+showNavButton="true"
+ navButtonPress="onNavBack"
+
+ title="The UI5 Colosseum - Task Details Page">
+<content>
+
+<l:Grid
+ 
+class="sapUiSmallMarginTop"
+ 
+defaultSpan="L4 M6 S12">
+<HBox>
+
+<Text
+ text="{myService>/Id}"/>
+
+<Input 
+submit = "onPressAdd"
+value ="{inputModel>/title}"/>
+
+<Button 
+text = "add"
+press="onPressAdd"/>
+<layoutData>
+
+<l:GridData indent="L5 M3 S1">
+
+								
+</l:GridData
+>
+</layoutData>
+</HBox>
+</l:Grid>
+</content>
+</Page>
+</mvc:View>

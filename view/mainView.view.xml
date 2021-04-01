@@ -35,19 +35,19 @@
 							
 								<!-- column headers -->
 								<columns>
-									<Column width="auto">
+									<Column >
 										<Text text="Task" />
 									</Column>
-									<Column width="auto">
+									<Column>
 										<Text text="Created By" />
 										
 									</Column>
 
-									<Column width="35%">
+									<Column width="auto">
 										<Text text="Description" />
 										
 									</Column>
-									<Column width="auto">
+									<Column >
 
 										<Text text="Due date" />
 										
@@ -73,7 +73,18 @@
 											
 											<Button  
 											icon="sap-icon://delete"  
-											press="onDeletePress" />
+											press="onDeletePress"
+											class="sapUiSmallMarginEnd" />
+											
+											<Button 
+											icon="sap-icon://detail-view"
+											  
+											type="Emphasized"
+										
+											 
+											press="navToTaskDetail"
+											/>
+											
 											
 										</HBox>
 		

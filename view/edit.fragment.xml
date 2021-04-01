@@ -30,8 +30,8 @@ xmlns:mvc="sap.ui.core.mvc"
 					<Text text="Created by:" />
 					<Input value="{editTodo>/Title/Createdby}" />
 				
-					<Text text="Description:" />
-					<Input value="{editTodo>/Title/Description}" />
+					<Text text="Descriptions:" />
+					<Input maxLength="40" value="{editTodo>/Title/Description}" />
 				
 					<Text text="Due date:" />
 					<DatePicker

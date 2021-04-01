@@ -33,6 +33,7 @@ sap.ui.define([
 			this.getView().setModel(oLocalModel, "localValueModel");
 
 			this.setItemsModel();
+			//this.getRouter().getRoute("main").attachMatched(this._onRouteMatched, this);
 
 		},
 		// If the promise created in dataOperations succeeds when called then fulfil this promise - else the catch is then operated. When it gets a response it will create a new JSON model with the data and asign it to a new model. 
@@ -51,6 +52,14 @@ sap.ui.define([
 					MessageBox.error(oError);
 				}.bind(this));
 		},
+		navToTaskDetails: function (oEvent) {
+			var item = oEvent.getSource().getBindingContext("oDataModel").getObject();
+			var taskId = item.Id;
+			this.getRouter().navTo("taskDetails", {
+				"taskId": taskId
+			});
+		},
+
 
 
 		onBeforeRendering: function () {
