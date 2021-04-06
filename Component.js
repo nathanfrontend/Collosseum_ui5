@@ -16,12 +16,15 @@ sap.ui.define([
 		 * @public
 		 * @override
 		 */
-		init: function() {
+		 init: function() {
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
+
+		    //Initialise the router
+			this.getRouter().initialize();
 		}
 	});
 });

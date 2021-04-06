@@ -33,11 +33,12 @@ sap.ui.define([
 			this.getView().setModel(oLocalModel, "localValueModel");
 
 			this.setItemsModel();
-			//this.getRouter().getRoute("main").attachMatched(this._onRouteMatched, this);
+			this.getRouter().getRoute("main"); //.attachMatched(this._onRouteMatched, this);
 
 		},
+	
 		// If the promise created in dataOperations succeeds when called then fulfil this promise - else the catch is then operated. When it gets a response it will create a new JSON model with the data and asign it to a new model. 
-//first commit example
+
 		setItemsModel: function (sortKey, sortDescending) {
 			dataOperations
 				.returnTodoItems(this, sortKey, sortDescending)
@@ -57,8 +58,25 @@ sap.ui.define([
 			var taskId = item.Id;
 			this.getRouter().navTo("taskDetails", {
 				"taskId": taskId
+			
 			});
+			console.log(taskId);
 		},
+		
+		// _onRouteMatched: function (oEvent) {
+		// 	console.log("routeMatched!");
+		// 	var myModel = this.getOwnerComponent().getModel("");
+        //     myModel.attachRequestCompleted(function(oEvent){
+		// 		this.setItemsModel();
+        //     }.bind(this));
+		// },
+		// onPressViewDetails: function (oEvent) {
+		// 	var sObject = oEvent.getSource().getBindingContext("oDataModel").getObject();
+		// 	var detailsModel = new JSONModel(sObject);
+		// 	var taskDetails = fragmentManager.taskDetails(this);
+		// 	taskDetails.setModel(detailsModel, "details");
+		// 	taskDetails.open();
+		// },
 
 
 

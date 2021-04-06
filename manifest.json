@@ -52,8 +52,44 @@
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "Nathan.Shaw.view.app",
+			"id": "app",
 			"type": "XML"
 		},
+		"routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewPath": "Nathan.Shaw.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "bypassed": {
+                    "target": "notFound"
+                }
+            },
+            "routes": [{
+                "pattern": "",
+                "name": "main",
+                "target": "main"
+            }, {
+                "pattern": "task",
+                "name": "taskDetails",
+                "target": "taskDetails"
+            }],
+            "targets": {
+                "main": {
+                    "viewName": "mainView",
+                    "viewId": "mainView",
+                    "viewLevel": 1
+                },
+                "taskDetails": {
+                    "viewName": "taskDetails",
+                    "viewId": "taskDetails",
+                    "viewLevel": 2,
+                    "transition": "flip"
+                }
+            }
+        },
+
 	
 
 		"dependencies": {
@@ -98,17 +134,6 @@
 					"uri": "css/style.css"
 				}
 			]
-		}, 
-		"routes": [{
-			"pattern": "",
-			"name": "main",
-			"target": "main"
-		}, {
-			"pattern": "detail/{taskId}",
-			"name": "taskDetails",
-			"target": "taskDetails"
-		}],
-		
-		
+		}
 	}
 }
