@@ -25,10 +25,10 @@ xmlns:mvc="sap.ui.core.mvc"
 			
 				<VBox >
 					<Text text="Task:" />
-					<Input value="{editTodo>/Title/Title}" />
+					<Input  maxLength="40" value="{editTodo>/Title/Title}" />
 				
 					<Text text="Created by:" />
-					<Input value="{editTodo>/Title/Createdby}" />
+					<Input  maxLength="40" value="{editTodo>/Title/Createdby}" />
 				
 					<Text text="Descriptions:" />
 					<Input maxLength="40" value="{editTodo>/Title/Description}" />

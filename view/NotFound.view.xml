@@ -1,0 +1,11 @@
+<mvc:View
+   controllerName="Nathan.Shaw.controller.NotFound"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   
+   <MessagePage
+   showNavButton="true"
+ navButtonPress="onNavBack"
+      title="NotFound"
+/>
+</mvc:View>

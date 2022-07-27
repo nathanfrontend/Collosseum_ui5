@@ -1,48 +1,48 @@
 
 <mvc:View
-xmlns:l="sap.ui.layout"
  
+xmlns:l="sap.ui.layout"
+xmlns:f="sap.ui.layout.form"
 xmlns:html="http://www.w3.org/1999/xhtml"
 xmlns:mvc="sap.ui.core.mvc"
 xmlns="sap.m"
+busyIndicatorDelay="0"
  
-controllerName="com.testing.nathan.todo.controller.taskDetails"
+controllerName="Nathan.Shaw.controller.taskDetails"
 displayBlock="true">
 
 <Page
+
+id="taskDetails"
 showNavButton="true"
  navButtonPress="onNavBack"
-
  title="The UI5 Colosseum - Task Details Page">
 <content>
+    <f:SimpleForm
+    minWidth="1024"
+    editable="false"
+    layout="ResponsiveGridLayout"
+    labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+    columnsL="1" columnsM="1"
+    >
+    <f:content id="grab">
+        <VBox 
+       >
+        <Label text="{i18n>formTaskName}"/>
+        <Text text='{myService>Title}' />
+        <Label text="{i18n>formCreatedBy}"/>
+        <Text text="{myService>Createdby}" />
+        <Label text="{i18n>formDescription}"/>
+        <Text text="{myService>Description}" />
+        <Label text="{i18n>formDueDate}"/>
+        <Text text="{myService>Duedate}" />
+        </VBox>
+       
+    </f:content>
+</f:SimpleForm>    
 
-<l:Grid
- 
-class="sapUiSmallMarginTop"
- 
-defaultSpan="L4 M6 S12">
-<HBox>
 
-<Text
- text="{myService>/Id}"/>
 
-<Input 
-submit = "onPressAdd"
-value ="{inputModel>/title}"/>
-
-<Button 
-text = "add"
-press="onPressAdd"/>
-<layoutData>
-
-<l:GridData indent="L5 M3 S1">
-
-								
-</l:GridData
->
-</layoutData>
-</HBox>
-</l:Grid>
 </content>
 </Page>
 </mvc:View>

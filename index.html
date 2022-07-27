@@ -1,34 +1,37 @@
 <!-- calls all of the javascript and creates the ui5 shell-->
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8" />
 
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta charset="UTF-8">
+    <title>To do App</title>
 
-		<title>To do App</title>
+    <!--src="../../resources/sap-ui-core.js" -->
+    <script
+      id="sap-ui-bootstrap"
+      src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+      data-sap-ui-libs="sap.m"
+      data-sap-ui-theme="sap_belize"
+      data-sap-ui-compatVersion="edge"
+      data-sap-ui-resourceroots='{"Nathan/Shaw": ""}'
+    ></script>
+    <script>
+      sap.ui.getCore().attachInit(function () {
+        new sap.m.Shell({
+          app: new sap.ui.core.ComponentContainer({
+            height: "100%",
+            name: "Nathan.Shaw",
+          }),
+        }).placeAt("content");
+      });
+    </script>
 
-        <!--src="../../resources/sap-ui-core.js" -->
-        <script id="sap-ui-bootstrap"
-			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
-			data-sap-ui-libs="sap.m"
-			data-sap-ui-theme="sap_belize"
-			data-sap-ui-compatVersion="edge"
-			data-sap-ui-resourceroots='{"Nathan/Shaw": ""}'>
-		</script>
-		<script>
-			sap.ui.getCore().attachInit(function() {
-				new sap.m.Shell({
-					app: new sap.ui.core.ComponentContainer({
-						height : "100%",
-						name : "Nathan.Shaw"
-					})
-				}).placeAt("content");
-			});
-		</script>
-	</head>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+  </head>
 
-	<body class="sapUiBody" id="content">
-	</body>
-
+  <body class="sapUiBody" id="content"></body>
 </html>

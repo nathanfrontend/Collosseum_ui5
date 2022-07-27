@@ -3,7 +3,9 @@
     controllerName="Nathan.Shaw.controller.app"
     displayBlock="true"
     xmlns="sap.m">
-    <Shell>
+  <Shell> 
 		<App id="app"/>
-	</Shell>
+  </Shell>
+
+	
 </mvc:View>

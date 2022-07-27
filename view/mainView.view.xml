@@ -7,30 +7,37 @@
 	xmlns:core="sap.ui.core"
 
 	xmlns="sap.m">
-	<App>
+	<App id="app">
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
 
 					
 					<l:Grid defaultSpan="L12 M12 S12">
-						<VBox>
+						<HBox>
+							
 						<Button
 						text="Add"
 						icon="sap-icon://add-activity"
 						type="Emphasized"
-						press="onAddPress" />
-					</VBox>
-
+						press="onAddPress" 
+						class="sapUiLargeMarginEnd"/>
+						
+						<SearchField  width="90%"  />
+					</HBox>
+				
 						<VBox 		class="SapUiResponsiveMargin">
+							<FlexBox id="myHBox" 	alignItems="Center"  class="SapUiResponsiveMargin"> </FlexBox>
 						
 							<layoutData> 
 								<l:GridData indent="L1 M1 S1" span="L10 M10 S10" />
 							</layoutData>
 							<!-- fills table using the items from results -->
 							<Table 
-					
+					            id="table"	
 								items="{oDataModel>/results}"
+								                growing="true"
+								growingThreshold="10" 
 								>
 							
 								<!-- column headers -->
@@ -47,17 +54,26 @@
 										<Text text="Description" />
 										
 									</Column>
-									<Column >
+									<Column id="dueDate">
+										<HBox>
+							
+										<Text text="Due date"  	class="sapUiLargeMarginEnd" />
 
-										<Text text="Due date" />
+								
+									</HBox>
 										
 									</Column>
+							
 									<Column width="auto">
+                                    <HBox>
 
-										
+
+										<Button width="auto"  press="onPressExcelExport" icon="sap-icon://excel-attachment" 		class="sapUiSmallMarginEnd" />
+										<!--<Button  press="getDeletedData" width="50%" icon="sap-icon://pie-chart" /> -->
+									</HBox> 
 									</Column>
 								</columns>
-
+<items>
 								<!-- aggregation template - fills each cell with the direct properties of the model in TestDara -->
 								<ColumnListItem>
 									<cells>
@@ -82,7 +98,7 @@
 											type="Emphasized"
 										
 											 
-											press="navToTaskDetail"
+											press="navToTaskDetails"
 											/>
 											
 											
@@ -91,6 +107,8 @@
 											
 									</cells>
 								</ColumnListItem>
+								
+							</items>
 							</Table>
 						</VBox>
 					</l:Grid>
